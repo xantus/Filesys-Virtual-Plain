@@ -1,0 +1,6 @@
+Revision history for Perl extension Filesys::Virtual::Plain.
+
+0.05 Fri Jan 21 21:10:00 2005
+	- seperated this module from Filesys::Virtual
+	- documented everything
+	- added utime
