@@ -72,7 +72,7 @@ METHODS
     Returns an array of the files in ls format.
 
   stat($file)
-    Returns an array of the files in ls format.
+    Does a normal stat() on a file or directory
 
   test($test,$file)
     Perform a perl type test on a file and returns the results.

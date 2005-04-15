@@ -21,7 +21,7 @@ use User::grent;
 use IO::File;
 
 our $AUTOLOAD;
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 our @ISA = qw(Filesys::Virtual);
 
 our %_fields = (
@@ -357,19 +357,18 @@ sub list {
 		if(!-d $dirfile) {
 			### This isn't a directory, so derive its short name, and push it.
 			my @parts = split(/\//, $dirfile);
-			my $fn = pop @parts;
-			push @ls, $fn;
+			push(@ls, pop @parts);
 		} else {
 			### Open the directory and get a file list.
             opendir(DIR, $dirfile);
             my @files = readdir(DIR);
+			closedir(DIR);
 						
 			### Process the files...
-            foreach (sort @files) {
-				push @ls, $_;
-			}
+            @ls = (sort @files);
 		}
 	}
+	
 	return @ls;
 }
 
@@ -393,18 +392,19 @@ sub list_details {
 			### an ls line.
 			my @parts = split(/\//, $dirfile);
 			my $fn = pop @parts;
-			push @ls, $self->_ls_stat($dirfile, $fn);
+			push(@ls, $self->_ls_stat($dirfile, $fn));
 		} else {
 			### Open the directory and get a file list.
             opendir(DIR, $dirfile);
             my @files = readdir(DIR);
+			closedir(DIR);
 						
 			### Make sure the directory path ends in '/'
 			$dirfile = (substr($dirfile, length($dirfile)-1, 1) eq '/') ? $dirfile : $dirfile.'/';
 						
 			### Process the files...
-            foreach (sort @files) {
-				push @ls, $self->_ls_stat($dirfile.$_, $_);
+			foreach (sort @files) {
+				push(@ls, $self->_ls_stat($dirfile.$_, $_));
 			}
 		}
 	}
@@ -416,7 +416,7 @@ sub list_details {
 
 =head2 stat($file)
 
-Returns an array of the files in ls format.
+Does a normal stat() on a file or directory
 
 =cut
 
