@@ -4,3 +4,4 @@ MANIFEST
 Makefile.PL
 Plain.pm
 t/00___use.t
+META.yml                                 Module meta-data (added by MakeMaker)

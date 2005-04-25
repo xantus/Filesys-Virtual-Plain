@@ -21,7 +21,7 @@ use User::grent;
 use IO::File;
 
 our $AUTOLOAD;
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 our @ISA = qw(Filesys::Virtual);
 
 our %_fields = (
@@ -480,12 +480,11 @@ See filetests in perlfunc (commandline: perldoc perlfunc)
 sub test {
 	my ($self, $test, $fn) = @_;
 
-	$fn =~ s/\s+/ /g;
-	$fn =~ s/'/\'/g;
 	$fn = $self->_path_from_root($fn);
+	$fn =~ s/'/\\'/g;
 	# NO FUNNY BUSINESS
 	$test =~ s/^(.)/$1/;
-
+	
 	my $ret = eval("-$test '$fn'");
 	
 	return ($@) ? undef : $ret;

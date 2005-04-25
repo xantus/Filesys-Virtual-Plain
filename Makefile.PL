@@ -10,4 +10,9 @@ WriteMakefile(
     	User::grent => undef,
 		IO::File => undef,
     }, # e.g., Module::Name => 1.1
+	'dist'         => {
+		'SUFFIX'       => ".gz",
+		'DIST_DEFAULT' => 'all tardist',
+		'COMPRESS'     => "gzip -9vf",
+	},
 );

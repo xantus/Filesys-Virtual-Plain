@@ -1,6 +1,9 @@
 Revision history for Perl extension Filesys::Virtual::Plain.
 
-0.06 Fir Apr 15 02:00:00 2005
+0.07 Mon Apr 25 02:32:00 2005
+	- fixed test bug
+
+0.06 Fri Apr 15 02:00:00 2005
 	- fixed docs for stat()
 	- cleaned up some code
 
