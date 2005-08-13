@@ -5,10 +5,10 @@ WriteMakefile(
     'NAME'		=> 'Filesys::Virtual::Plain',
     'VERSION_FROM'	=> 'Plain.pm', # finds $VERSION
     'PREREQ_PM'		=> {
-		Filesys::Virtual => 0.05,
-    	User::pwent => undef,
-    	User::grent => undef,
-		IO::File => undef,
+		'Filesys::Virtual' => 0.05,
+    	'User::pwent' => undef,
+    	'User::grent' => undef,
+		'IO::File' => undef,
     }, # e.g., Module::Name => 1.1
 	'dist'         => {
 		'SUFFIX'       => ".gz",

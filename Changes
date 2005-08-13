@@ -1,13 +1,16 @@
 Revision history for Perl extension Filesys::Virtual::Plain.
 
-0.07 Mon Apr 25 02:32:00 2005
+0.08 Fri Aug 12 2005
+	- changed quoting in Makefile.PL
+
+0.07 Mon Apr 25 2005
 	- fixed test bug
 
-0.06 Fri Apr 15 02:00:00 2005
+0.06 Fri Apr 15 2005
 	- fixed docs for stat()
 	- cleaned up some code
 
-0.05 Fri Jan 21 21:10:00 2005
+0.05 Fri Jan 21 2005
 	- seperated this module from Filesys::Virtual
 	- documented everything
 	- added utime

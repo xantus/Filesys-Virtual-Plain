@@ -21,7 +21,7 @@ use User::grent;
 use IO::File;
 
 our $AUTOLOAD;
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 our @ISA = qw(Filesys::Virtual);
 
 our %_fields = (
