@@ -21,13 +21,13 @@ use User::grent;
 use IO::File;
 
 our $AUTOLOAD;
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 our @ISA = qw(Filesys::Virtual);
 
 our %_fields = (
-	 'cwd'       => '1',
-	 'root_path' => '1',
-	 'home_path' => '1',
+	 'cwd'       => 1,
+	 'root_path' => 1,
+	 'home_path' => 1,
 );
 
 sub AUTOLOAD {
@@ -168,7 +168,7 @@ sub cwd {
 	if (@_) {
 		$self->{cwd} = shift;
 	} else {
-		$self->{cwd} = '/' if ($self->{cwd} eq '');
+		$self->{cwd} ||= '/';
 	}
 		
 	return $self->{cwd};
