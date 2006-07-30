@@ -106,11 +106,12 @@ METHODS
     Performs a utime() on the file(s). It changes the access time and mod
     time of those files.
 
-TODO
-    You tell me :)
-
 AUTHOR
     David Davis, <xantus@cpan.org>, http://teknikill.net/
+
+LICENSE
+    This library is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
 
 SEE ALSO
     perl(1), Filesys::Virtual, Filesys::Virtual::SSH,

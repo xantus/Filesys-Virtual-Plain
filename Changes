@@ -1,5 +1,8 @@
 Revision history for Perl extension Filesys::Virtual::Plain.
 
+0.10 Sun Jul 30 2006
+    - updated license
+
 0.09 Sun Jul 30 2006
     - fixed ticket #17076, Unititialized cwd value
 

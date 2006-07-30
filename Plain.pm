@@ -21,7 +21,7 @@ use User::grent;
 use IO::File;
 
 our $AUTOLOAD;
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 our @ISA = qw(Filesys::Virtual);
 
 our %_fields = (
@@ -725,13 +725,14 @@ sub _ls_stat {
 
 __END__
 
-=head1 TODO
-
-You tell me :)
-
 =head1 AUTHOR
 
 David Davis, E<lt>xantus@cpan.orgE<gt>, http://teknikill.net/
+
+=head1 LICENSE
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
 
 =head1 SEE ALSO
 
